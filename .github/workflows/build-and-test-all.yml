@@ -81,7 +81,7 @@ jobs:
       - run: inv ci-make-install
       - run: ccache -s
       - name: Store the binaries
-        uses: actions/upload-artifact@v3 # this takes 30 seconds, maybe we want to tar
+        uses: actions/upload-artifact@v4 # this takes 30 seconds, maybe we want to tar
         with:
           name: pdns-auth
           path: /opt/pdns-auth
@@ -148,7 +148,7 @@ jobs:
       - run: inv ci-make-install
       - run: ccache -s
       - name: Store the binaries
-        uses: actions/upload-artifact@v3 # this takes 30 seconds, maybe we want to tar
+        uses: actions/upload-artifact@v4 # this takes 30 seconds, maybe we want to tar
         with:
           name: pdns-recursor-${{ matrix.sanitizers }}
           path: /opt/pdns-recursor
@@ -222,7 +222,7 @@ jobs:
       - run: inv ci-make-install
       - run: ccache -s
       - name: Store the binaries
-        uses: actions/upload-artifact@v3 # this takes 30 seconds, maybe we want to tar
+        uses: actions/upload-artifact@v4 # this takes 30 seconds, maybe we want to tar
         with:
           name: dnsdist-${{ matrix.features }}-${{ matrix.sanitizers }}
           path: /opt/dnsdist
